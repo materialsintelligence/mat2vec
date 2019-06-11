@@ -1,0 +1,8 @@
+numpy
+monty
+regex
+unidecode
+pymatgen
+chemdataextractor
+gensim
+tqdm

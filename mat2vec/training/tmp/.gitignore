@@ -1,0 +1,5 @@
+# to commit the folder with this empty gitignore inside
+# and nothing else
+*
+*/
+!.gitignore
