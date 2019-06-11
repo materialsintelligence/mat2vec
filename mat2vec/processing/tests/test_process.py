@@ -6,7 +6,7 @@ class ProcessTextTest(unittest.TestCase):
 
     def setUp(self):
 
-        self.mtp = process.MaterialsTextProcessing()
+        self.mtp = process.MaterialsTextProcessor()
 
         self.sentence_1 = "We measured 100 materials, including Ni(CO)4 and obtained very " \
                           "high Thermoelectric Figures of merit ZT. These results demonstrate " \

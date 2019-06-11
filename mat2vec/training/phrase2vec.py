@@ -11,7 +11,7 @@ import regex
 import pickle
 from tqdm import tqdm
 
-logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=logging.INFO)
+logging.basicConfig(format="%(asctime)s : %(levelname)s : %(message)s", level=logging.INFO)
 
 
 def exclude_words(phrasegrams, words):
@@ -20,12 +20,12 @@ def exclude_words(phrasegrams, words):
     words_re_list = []
     for word in words:
         we = regex.escape(word)
-        words_re_list.append('^' + we + '$|^' + we + '_|_' + we + '$|_' + we + '_')
-    word_reg = regex.compile(r''+"|".join(words_re_list))
+        words_re_list.append("^" + we + "$|^" + we + "_|_" + we + "$|_" + we + "_")
+    word_reg = regex.compile(r""+"|".join(words_re_list))
     for gram in tqdm(phrasegrams):
         valid = True
         for sub_gram in gram:
-            if word_reg.search(sub_gram.decode('unicode_escape', 'ignore')) is not None:
+            if word_reg.search(sub_gram.decode("unicode_escape", "ignore")) is not None:
                 valid = False
                 break
             if not valid:
@@ -73,13 +73,13 @@ if __name__ == "__main__":
     parser.add_argument("--phrase_count", default=20, help="Minimum number of occurrences for phrase to be considered.")
     parser.add_argument("--phrase_threshold", default=20.0, help="Phrase importance threshold.")
     parser.add_argument("-include_extra_phrases",
-                        action='store_true',
+                        action="store_true",
                         help="If true, will look for all_ents.p and add extra phrases.")
-    parser.add_argument("-sg", action='store_true', help="If set, will train a skip-gram, otherwise a CBOW.")
-    parser.add_argument("-hs", action='store_true', help="If set, hierarchical softmax will be used.")
-    parser.add_argument("-keep_formula", action='store_true',
+    parser.add_argument("-sg", action="store_true", help="If set, will train a skip-gram, otherwise a CBOW.")
+    parser.add_argument("-hs", action="store_true", help="If set, hierarchical softmax will be used.")
+    parser.add_argument("-keep_formula", action="store_true",
                         help="If set, keeps simple chemical formula independent on count.")
-    parser.add_argument("-notmp", action='store_true', help="If set, will not store the progress in tmp folder.")
+    parser.add_argument("-notmp", action="store_true", help="If set, will not store the progress in tmp folder.")
     args = parser.parse_args()
 
     all_formula = []
@@ -102,11 +102,11 @@ if __name__ == "__main__":
         logging.info("Basic min_count trim rule for formula.")
         trim_rule_formula = None
 
-    # The trim rule for extra phrases to always keep them, similar to the formulae
+    # The trim rule for extra phrases to always keep them, similar to the formulae.
     if args.include_extra_phrases:
         INCLUDE_PHRASES_SET = set(INCLUDE_PHRASES)
         try:
-            with open("all_ents.p", 'rb') as f:
+            with open("all_ents.p", "rb") as f:
                 INCLUDE_PHRASES += list(set(pickle.load(f)))
                 INCLUDE_PHRASES_SET = set([ip.replace("_", "$@$@$") for ip in INCLUDE_PHRASES])
                 logging.info("Included the supplied {} additional phrases.".format(len(INCLUDE_PHRASES)))
@@ -114,7 +114,8 @@ if __name__ == "__main__":
             logging.info("No specific phrases supplied, using the defaults.")
 
         def keep_extra_phrases(word, count, min_count):
-            if word in INCLUDE_PHRASES_SET or trim_rule_formula is not None and trim_rule_formula(word, 1, 2) == gensim.utils.RULE_KEEP:
+            if word in INCLUDE_PHRASES_SET or trim_rule_formula is not None and \
+                    trim_rule_formula(word, 1, 2) == gensim.utils.RULE_KEEP:
                 return gensim.utils.RULE_KEEP
             else:
                 return gensim.utils.RULE_DEFAULT
@@ -193,5 +194,5 @@ if __name__ == "__main__":
         callbacks=callbacks)
 
     analogy_file = os.path.join("data", "analogies.txt")
-    # save the accuracies in the tmp folder
+    # Save the accuracies in the tmp folder.
     compute_epoch_accuracies("tmp", args.model_name, analogy_file)

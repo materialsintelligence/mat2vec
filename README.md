@@ -19,8 +19,8 @@ Example usage in a python console:
 
 ```
 >>> from mat2vec.processing import process
->>> text_processing = process.MaterailsTextProcessing()
->>> text_processing.process("LiCoO2 is a bettery cathode material.")
+>>> text_processor = process.MaterailsTextProcessor()
+>>> text_processor.process("LiCoO2 is a bettery cathode material.")
 (['CoLiO2', 'is', 'a', 'bettery', 'cathode', 'material', '.'], [('LiCoO2', 'CoLiO2')])
 ```
 
