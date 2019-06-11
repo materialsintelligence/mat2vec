@@ -1,6 +1,5 @@
-# Unsupervised word embeddings capture latent knowledge from materials science literature, *Nature* (2019).
-## Tshitoyan, V., Dagdelen, J., Weston, L., Dunn, A., Rong, Z., Kononova, O., Persson, K. A., Ceder, G. and Jain, A. 
-### Supplementary code and data.
+## Supplementary Materials for "Unsupervised word embeddings capture latent knowledge from materials science literature", *Nature* (2019).
+### Tshitoyan, V., Dagdelen, J., Weston, L., Dunn, A., Rong, Z., Kononova, O., Persson, K. A., Ceder, G. and Jain, A. 
 
 
 ### Set up
