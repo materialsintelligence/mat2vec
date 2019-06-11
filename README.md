@@ -17,19 +17,19 @@ and run `pip install -r requirements.txt`
 
 Example usage in a python console:
 
+```python
+from mat2vec.processing import process
+text_processing = process.MaterailsTextProcessing()
+text_processing.process("LiCoO2 is a bettery cathode material.")
 ```
->>> from mat2vec.processing import process
->>> text_processing = process.MaterailsTextProcessing()
->>> text_processing.process("LiCoO2 is a bettery cathode material.")
-(['CoLiO2', 'is', 'a', 'bettery', 'cathode', 'material', '.'], [('LiCoO2', 'CoLiO2')])
-```
+> (['CoLiO2', 'is', 'a', 'bettery', 'cathode', 'material', '.'], [('LiCoO2', 'CoLiO2')])
 
 For the various methods and options see the docstrings in the code.
 
 #### Training
 To run an example training, navigate to *mat2vec/training/* and run
 
-```
+```shell
 python phrase2vec.py --corpus=data/corpus_example --model_name=model_exampe
 ```
 
@@ -38,7 +38,7 @@ and *tmp* folders. It should take a few seconds since the example corpus has onl
 
 For more options, run
 
-```
+```shell
 python phrase2vec.py --help
 ```
 
@@ -46,11 +46,11 @@ python phrase2vec.py --help
 
 Load and query for similar words and phrases
 
+```python
+from gensim.models import Word2Vec
+w2v_model = Word2Vec.load("mat2vec/training/models/pretrained_embeddings")
+w2v_model.wv.most_similar("thermoelectric")
 ```
->>> from gensim.models import Word2Vec
->>> w2v_model = Word2Vec.load("mat2vec/training/models/pretrained_embeddings")
->>> w2v_model.wv.most_similar("thermoelectric")
-[('thermoelectrics', 0.8435688018798828), ('thermoelectric_properties', 0.8339033126831055), ('thermoelectric_power_generation', 0.7931368350982666), ('thermoelectric_figure_of_merit', 0.7916493415832
+> [('thermoelectrics', 0.8435688018798828), ('thermoelectric_properties', 0.8339033126831055), ('thermoelectric_power_generation', 0.7931368350982666), ('thermoelectric_figure_of_merit', 0.7916493415832
 52), ('seebeck_coefficient', 0.7753845453262329), ('thermoelectric_generators', 0.7641351819038391), ('figure_of_merit_ZT', 0.7587921023368835), ('thermoelectricity', 0.7515754699707031), ('Bi2Te3', 0
 .7480161190032959), ('thermoelectric_modules', 0.7434879541397095)]
-```
