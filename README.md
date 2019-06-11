@@ -15,7 +15,7 @@ and run `pip install -r requirements.txt`
 
 #### Processing
 
-Example usage in a python console:
+Example python usage:
 
 ```python
 from mat2vec.processing import process
@@ -44,7 +44,7 @@ python phrase2vec.py --help
 
 #### Pretrained Embeddings
 
-Load and query for similar words and phrases
+Load and query for similar words and phrases:
 
 ```python
 from gensim.models import Word2Vec
