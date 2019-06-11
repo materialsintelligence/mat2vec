@@ -53,3 +53,11 @@ w2v_model.wv.most_similar("thermoelectric")
 > [('thermoelectrics', 0.8435688018798828), ('thermoelectric_properties', 0.8339033126831055), ('thermoelectric_power_generation', 0.7931368350982666), ('thermoelectric_figure_of_merit', 0.7916493415832
 52), ('seebeck_coefficient', 0.7753845453262329), ('thermoelectric_generators', 0.7641351819038391), ('figure_of_merit_ZT', 0.7587921023368835), ('thermoelectricity', 0.7515754699707031), ('Bi2Te3', 0
 .7480161190032959), ('thermoelectric_modules', 0.7434879541397095)]
+
+### Issues?
+
+You can either report an issue on github or contact one of us directly. 
+Try [vahe.tshitoyan@gmail.com](mailto:vahe.tshitoyan@gmail.com), 
+[jdagdelen@berkeley.edu](mailto:jdagdelen@berkeley.edu), 
+[lweston@lbl.gov](mailto:lweston@lbl.gov) or 
+[ajain@lbl.gov](mailto:ajain@lbl.gov).
