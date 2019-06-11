@@ -17,9 +17,9 @@ and run `pip install -r requirements.txt`
 Example python usage:
 
 ```python
-from mat2vec.processing import process
-text_processing = process.MaterailsTextProcessing()
-text_processing.process("LiCoO2 is a bettery cathode material.")
+from mat2vec.processing.process import MaterialsTextProcessor
+text_processor = MaterialsTextProcessor()
+text_processor.process("LiCoO2 is a bettery cathode material.")
 ```
 > (['CoLiO2', 'is', 'a', 'bettery', 'cathode', 'material', '.'], [('LiCoO2', 'CoLiO2')])
 
