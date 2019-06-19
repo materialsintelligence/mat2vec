@@ -10,7 +10,7 @@ We recommend using [conda environments](https://docs.conda.io/projects/conda/en/
 and run `pip install -r requirements.txt`. Note: If you are using a conda env and any packages fail to compile during this step, you may need to first install those packages separately with `conda install package_name`. 
 1. Wait for all the requirements to be downloaded and installed.
 1. run `pip install .` to install this module.
-1. Finalize your chemdataextractor installation by executing ``cde data download``.
+1. Finalize your chemdataextractor installation by executing ``cde data download`` (You may need to restart your virtual environment for the cde command line interface to be found.)
 1. You are ready to go!
 
 #### Processing
