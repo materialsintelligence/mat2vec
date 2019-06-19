@@ -62,6 +62,7 @@ w2v_model.wv.most_similar("band_gap", topn=5)
 
 Analogies:
 ```python
+# helium is to He as ___ is to Fe? 
 w2v_model.wv.most_similar(
     positive=["helium", "Fe"], 
     negative=["He"], topn=1)
@@ -70,6 +71,7 @@ w2v_model.wv.most_similar(
 
 Material formulae need to be normalized before analogies:
 ```python
+# "GaAs" is not normalized
 w2v_model.wv.most_similar(
     positive=["cubic", "CdSe"], 
     negative=["GaAs"], topn=1)
