@@ -30,7 +30,7 @@ For the various methods and options see the docstrings in the code.
 To run an example training, navigate to *mat2vec/training/* and run
 
 ```shell
-python phrase2vec.py --corpus=data/corpus_example --model_name=model_exampe
+python phrase2vec.py --corpus=data/corpus_example --model_name=model_example
 ```
 
 from the terminal. It should run an example training and save the files in *models*
