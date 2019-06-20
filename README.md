@@ -7,10 +7,10 @@
 1. Make sure you have `python3.6` and the `pip` module installed. 
 We recommend using [conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 1. Navigate to the root folder (the same folder that contains this README file)
-and run `pip install -r requirements.txt`
+and run `pip install -r requirements.txt`. Note: If you are using a conda env and any packages fail to compile during this step, you may need to first install those packages separately with `conda install package_name`. 
 1. Wait for all the requirements to be downloaded and installed.
 1. run `pip install .` to install this module.
-1. Finalize your chemdataextractor installation by executing ``cde data download``.
+1. Finalize your chemdataextractor installation by executing ``cde data download`` (You may need to restart your virtual environment for the cde command line interface to be found.)
 1. You are ready to go!
 
 #### Processing
@@ -18,11 +18,11 @@ and run `pip install -r requirements.txt`
 Example python usage:
 
 ```python
-from mat2vec.processing.process import MaterialsTextProcessor
+from mat2vec.processing import MaterialsTextProcessor
 text_processor = MaterialsTextProcessor()
 text_processor.process("LiCoO2 is a bettery cathode material.")
 ```
-> (['CoLiO2', 'is', 'a', 'bettery', 'cathode', 'material', '.'], [('LiCoO2', 'CoLiO2')])
+> (['CoLiO2', 'is', 'a', 'battery', 'cathode', 'material', '.'], [('LiCoO2', 'CoLiO2')])
 
 For the various methods and options see the docstrings in the code.
 
@@ -30,7 +30,7 @@ For the various methods and options see the docstrings in the code.
 To run an example training, navigate to *mat2vec/training/* and run
 
 ```shell
-python phrase2vec.py --corpus=data/corpus_example --model_name=model_exampe
+python phrase2vec.py --corpus=data/corpus_example --model_name=model_example
 ```
 
 from the terminal. It should run an example training and save the files in *models*
@@ -45,7 +45,6 @@ python phrase2vec.py --help
 #### Pretrained Embeddings
 
 Load and query for similar words and phrases:
-
 ```python
 from gensim.models import Word2Vec
 w2v_model = Word2Vec.load("mat2vec/training/models/pretrained_embeddings")
@@ -55,6 +54,41 @@ w2v_model.wv.most_similar("thermoelectric")
 52), ('seebeck_coefficient', 0.7753845453262329), ('thermoelectric_generators', 0.7641351819038391), ('figure_of_merit_ZT', 0.7587921023368835), ('thermoelectricity', 0.7515754699707031), ('Bi2Te3', 0
 .7480161190032959), ('thermoelectric_modules', 0.7434879541397095)]
 
+Phrases can be queried with underscores:
+```python
+w2v_model.wv.most_similar("band_gap", topn=5)
+```
+> [('bandgap', 0.934801459312439), ('band_-_gap', 0.933477520942688), ('band_gaps', 0.8606899380683899), ('direct_band_gap', 0.8511275053024292), ('bandgaps', 0.818678617477417)]
+
+Analogies:
+```python
+# helium is to He as ___ is to Fe? 
+w2v_model.wv.most_similar(
+    positive=["helium", "Fe"], 
+    negative=["He"], topn=1)
+```
+> [('iron', 0.7700884938240051)]
+
+Material formulae need to be normalized before analogies:
+```python
+# "GaAs" is not normalized
+w2v_model.wv.most_similar(
+    positive=["cubic", "CdSe"], 
+    negative=["GaAs"], topn=1)
+```
+> KeyError: "word 'GaAs' not in vocabulary"
+```python
+from mat2vec.processing import MaterialsTextProcessor
+text_processor = MaterialsTextProcessor()
+w2v_model.wv.most_similar(
+    positive=["cubic", text_processor.normalized_formula("CdSe")], 
+    negative=[text_processor.normalized_formula("GaAs")], topn=1)
+```
+> [('hexagonal', 0.6162797212600708)]
+
+Keep in mind that words should also be processed before queries.
+Most of the time this is as simple as lowercasing, however, it is the safest
+to use the `process()` method of `mat2vec.processing.MaterialsTextProcessor`.
 ### Issues?
 
 You can either report an issue on github or contact one of us directly. 
