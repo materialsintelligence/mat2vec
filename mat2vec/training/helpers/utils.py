@@ -9,9 +9,9 @@ from gensim.models import Word2Vec
 
 import numpy as np
 
-from mat2vec.processing import process
+from mat2vec.processing.process import MaterialsTextProcessor
 
-text_processing = process.MaterialsTextProcessor()
+text_processing = MaterialsTextProcessor()
 
 
 COMMON_TERMS = ["-", "-", b"\xe2\x80\x93", b"'s", b"\xe2\x80\x99s", "from", "as", "at", "by", "of", "on",
