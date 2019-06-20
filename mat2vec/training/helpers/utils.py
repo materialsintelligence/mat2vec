@@ -11,7 +11,7 @@ import numpy as np
 
 from mat2vec.processing import process
 
-text_processing = process.MaterialsTextProcessing()
+text_processing = process.MaterialsTextProcessor()
 
 
 COMMON_TERMS = ["-", "-", b"\xe2\x80\x93", b"'s", b"\xe2\x80\x99s", "from", "as", "at", "by", "of", "on",
