@@ -4,9 +4,10 @@
 
 ### Set up
 
+1. Before you clone this repository, install [git-lfs](https://help.github.com/en/articles/installing-git-large-file-storage) 
+if you do not already have it. The Word2vec model files are downloaded via git-lfs.
 1. Make sure you have `python3.6` and the `pip` module installed. 
 We recommend using [conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
-1. Install git-lfs if you do not already have it. [(Installation instructions)](https://help.github.com/en/articles/installing-git-large-file-storage). 
 1. Navigate to the root folder of this repository (the same folder that contains this README file)
 and run `pip install -r requirements.txt`. Note: If you are using a conda env and any packages fail to compile during this step, you may need to first install those packages separately with `conda install package_name`. 
 1. Wait for all the requirements to be downloaded and installed.
