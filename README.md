@@ -6,7 +6,7 @@
 
 1. Make sure you have `python3.6` and the `pip` module installed. 
 We recommend using [conda environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
-1. Navigate to the root folder (the same folder that contains this README file)
+1. Navigate to the root folder of this repository (the same folder that contains this README file)
 and run `pip install -r requirements.txt`. Note: If you are using a conda env and any packages fail to compile during this step, you may need to first install those packages separately with `conda install package_name`. 
 1. Wait for all the requirements to be downloaded and installed.
 1. run `pip install .` to install this module.
