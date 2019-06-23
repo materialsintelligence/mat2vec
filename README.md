@@ -1,5 +1,5 @@
-## Supplementary Materials for "Unsupervised word embeddings capture latent knowledge from materials science literature", *Nature* (2019).
-### Tshitoyan, V., Dagdelen, J., Weston, L., Dunn, A., Rong, Z., Kononova, O., Persson, K. A., Ceder, G. and Jain, A. 
+### Supplementary Materials for "Unsupervised word embeddings capture latent knowledge from materials science literature", *Nature* (2019).
+#### Tshitoyan, V., Dagdelen, J., Weston, L., Dunn, A., Rong, Z., Kononova, O., Persson, K. A., Ceder, G. and Jain, A. 
 doi: [10.1038/s41586-019-1335-8](https://doi.org/10.1038/s41586-019-1335-8)
 
 ### Set up
@@ -13,7 +13,7 @@ and run `pip install -r requirements.txt`. Note: If you are using a conda env an
 If the download fails, manually download the [model](https://storage.googleapis.com/mat2vec/pretrained_embeddings), 
 [word embeddings](https://storage.googleapis.com/mat2vec/pretrained_embeddings.wv.vectors.npy) and 
 [output embeddings](https://storage.googleapis.com/mat2vec/pretrained_embeddings.trainables.syn1neg.npy) and put them in mat2vec/training/models.
-1. Finalize your chemdataextractor installation by executing ``cde data download`` (You may need to restart your virtual environment for the cde command line interface to be found.)
+1. Finalize your chemdataextractor installation by executing ``cde data download`` (You may need to restart your virtual environment for the cde command line interface to be found).
 1. You are ready to go!
 
 #### Processing
