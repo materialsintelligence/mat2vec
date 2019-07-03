@@ -69,7 +69,7 @@ if __name__ == "__main__":
     parser.add_argument("--batch", default=10000, help="Minibatch size.")
     parser.add_argument("--negative", default=15, help="Number of negative samples.")
     parser.add_argument("--subsample", default=0.0001, help="Subsampling rate.")
-    parser.add_argument("--phrase_depth", default=2, help="The number of passes to do for phrase generation.")
+    parser.add_argument("--phrase_depth", default=2, help="The number of passes to perform for phrase generation.")
     parser.add_argument("--phrase_count", default=10, help="Minimum number of occurrences for phrase to be considered.")
     parser.add_argument("--phrase_threshold", default=15.0, help="Phrase importance threshold.")
     parser.add_argument("-include_extra_phrases",
