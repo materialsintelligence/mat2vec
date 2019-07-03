@@ -36,8 +36,8 @@ def exclude_words(phrasegrams, words):
 
 
 # Generating word grams.
-def wordgrams(sent, depth, pc, th, ct, et, ip, d=1):
-    if depth == 1:
+def wordgrams(sent, depth, pc, th, ct, et, ip, d=0):
+    if depth == 0:
         return sent, None
     else:
         """Builds word grams according to the specification."""
@@ -60,18 +60,18 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("--corpus", required=True, help="The path to the corpus to train on.")
     parser.add_argument("--model_name", required=True, help="Name for saving the model (in the models folder).")
-    parser.add_argument("--epochs", default=10, help="Number of epochs.")
+    parser.add_argument("--epochs", default=30, help="Number of epochs.")
     parser.add_argument("--size", default=200, help="Size of the embedding.")
-    parser.add_argument("--window", default=5, help="Context window size.")
+    parser.add_argument("--window", default=8, help="Context window size.")
     parser.add_argument("--min_count", default=5, help="Minimum number of occurrences for word.")
     parser.add_argument("--workers", default=16, help="Number of workers.")
-    parser.add_argument("--alpha", default=0.025, help="Learning rate.")
+    parser.add_argument("--alpha", default=0.01, help="Learning rate.")
     parser.add_argument("--batch", default=10000, help="Minibatch size.")
-    parser.add_argument("--negative", default=10, help="Number of negative samples.")
-    parser.add_argument("--subsample", default=0.001, help="Subsampling rate.")
-    parser.add_argument("--phrase_depth", default=3, help="The number of words (grams) to use for phrases.")
-    parser.add_argument("--phrase_count", default=20, help="Minimum number of occurrences for phrase to be considered.")
-    parser.add_argument("--phrase_threshold", default=20.0, help="Phrase importance threshold.")
+    parser.add_argument("--negative", default=15, help="Number of negative samples.")
+    parser.add_argument("--subsample", default=0.0001, help="Subsampling rate.")
+    parser.add_argument("--phrase_depth", default=2, help="The number of passes to perform for phrase generation.")
+    parser.add_argument("--phrase_count", default=10, help="Minimum number of occurrences for phrase to be considered.")
+    parser.add_argument("--phrase_threshold", default=15.0, help="Phrase importance threshold.")
     parser.add_argument("-include_extra_phrases",
                         action="store_true",
                         help="If true, will look for all_ents.p and add extra phrases.")
