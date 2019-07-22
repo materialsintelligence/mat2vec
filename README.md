@@ -1,6 +1,8 @@
-### Supplementary Materials for "Unsupervised word embeddings capture latent knowledge from materials science literature", *Nature* (2019).
+### Supplementary Materials for "Unsupervised word embeddings capture latent knowledge from materials science literature", *Nature*  571, 95–98 (2019).
 #### Tshitoyan, V., Dagdelen, J., Weston, L., Dunn, A., Rong, Z., Kononova, O., Persson, K. A., Ceder, G. and Jain, A. 
 doi: [10.1038/s41586-019-1335-8](https://doi.org/10.1038/s41586-019-1335-8)
+
+A view-only (no download) link to the paper: https://rdcu.be/bItqk
 
 ### Set up
 
@@ -93,6 +95,10 @@ For more options, run
 ```shell
 python phrase2vec.py --help
 ```
+
+### Related Work
+
+- Weston, L., Tshitoyan, V., Dagdelen, J., Kononova, O., Persson, K. A., Ceder, G. and Jain, A. Named Entity Recognition and Normalization Applied to Large-Scale Information Extraction from the Materials Science Literature, ChemRxiv. Preprint. (2019).
 
 ### Issues?
 
