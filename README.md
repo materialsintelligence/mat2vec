@@ -98,7 +98,7 @@ python phrase2vec.py --help
 
 ### Related Work
 
-- Weston, L., Tshitoyan, V., Dagdelen, J., Kononova, O., Persson, K. A., Ceder, G. and Jain, A. Named Entity Recognition and Normalization Applied to Large-Scale Information Extraction from the Materials Science Literature, ChemRxiv. Preprint. (2019).
+- Weston, L., Tshitoyan, V., Dagdelen, J., Kononova, O., Persson, K. A., Ceder, G. and Jain, A. Named Entity Recognition and Normalization Applied to Large-Scale Information Extraction from the Materials Science Literature, [ChemRxiv. Preprint.](https://chemrxiv.org/articles/Named_Entity_Recognition_and_Normalization_Applied_to_Large-Scale_Information_Extraction_from_the_Materials_Science_Literature/8226068) (2019).
 
 ### Issues?
 
