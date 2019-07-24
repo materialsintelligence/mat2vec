@@ -86,4 +86,5 @@ setup(
         'install': Word2vecModelDownload,
     },
     include_package_data=True,
+    install_requires=['python_version>="3.6.0<3.7.0"']
 )
