@@ -6,7 +6,7 @@ This document describes how to train a word2vec model on PubMed abstracts.
 
 ## Installation
 
-Run the following to install the dependecies:
+Run the following to install the module:
 ```
 cd foundation/src/python/third_party/mat2vec
 python setup.py install
