@@ -3,7 +3,6 @@ This document describes how to train a word2vec model on PubMed abstracts.
 ***Most of this code was copied from
 [mat2vec repository](https://github.com/materialsintelligence/mat2vec)***
 
-
 ## Installation
 
 Run the following to install the module:
