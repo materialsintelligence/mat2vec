@@ -192,7 +192,6 @@ if __name__ == "__main__":
         batch_words=int(args.batch),
         iter=int(args.epochs),
         callbacks=callbacks)
-    my_model.callbacks = ()
     my_model.save(os.path.join("models", args.model_name))
 
     analogy_file = os.path.join("data", "analogies.txt")
