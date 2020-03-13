@@ -71,7 +71,7 @@ class Word2vecModelDownload(install):
         return True
 
 
-with open('README.md') as f:
+with open('README.md', encoding="utf-8") as f:
     readme = f.read()
 
 setup(
