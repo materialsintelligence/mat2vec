@@ -292,7 +292,7 @@ class MaterialsTextProcessor:
                 if len(composition.keys()) < 2 or any([not self.is_element(key) for key in composition.keys()]):
                     return False
                 return True
-            except (CompositionError, ValueError):
+            except (CompositionError, ValueError, OverflowError):
                 return False
         else:
             return False
